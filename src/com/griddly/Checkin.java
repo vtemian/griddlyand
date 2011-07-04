@@ -32,7 +32,8 @@ public class Checkin extends Activity {
 		bestProvider = locManager.getBestProvider(criteria, false);
 		Location location = locManager.getLastKnownLocation(bestProvider);
 		LocationListener mlocListener = new GPSLocationListener(getApplicationContext(), ll);
-        locManager.requestLocationUpdates( LocationManager.GPS_PROVIDER, 0, 0, mlocListener);
+        locManager.requestLocationUpdates( LocationManager.NETWORK_PROVIDER, 0, 0, mlocListener);
+        mlocListener.onLocationChanged(location);
     }
 
 }

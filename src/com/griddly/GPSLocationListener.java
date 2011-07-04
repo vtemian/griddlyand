@@ -47,12 +47,20 @@ public class GPSLocationListener extends Activity implements LocationListener{
 		    
 		    if (result.getMeta().getCode() == 200) {
 		    	boolean data = false;	
+		    	Venues venues = new Venues();
+		    	
 		    	for (CompactVenue venue : result.getResult().getVenues()) {
+		    		venues.add(venue);
+		    	}
+		    	
+		    	System.out.println("---------------Start List------------");
+		    	for (CompactVenue venue : venues.getVenues()) {
 		    		fi.foyt.foursquare.api.entities.Location loc =  venue.getLocation();
 		    		Double lang = loc.getLat();
 		    		Double lng = loc.getLng();
 		    		addButton(venue.getName(), Double.toString(lang), Double.toString(lng));
-		    	  data = true;
+		    		data = true;
+		    		System.out.println("Distance: "+venue.getLocation().getDistance());
 		    	}
 		    	if(!data)
 		    		Toast.makeText(context, "No results", Toast.LENGTH_LONG).show();
