@@ -2,7 +2,7 @@
 # A fatal error has been detected by the Java Runtime Environment:
 #
 #  Internal Error (classFileParser.cpp:3494), pid=5816, tid=3078675312
-#  Error: ShouldNotReachHere()
+#  Error: ShouldNotRedachHere()
 #
 # JRE version: 6.0_22-b22
 # Java VM: OpenJDK Server VM (20.0-b11 mixed mode linux-x86 )
